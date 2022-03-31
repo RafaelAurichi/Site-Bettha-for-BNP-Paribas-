@@ -1,0 +1,368 @@
+$green: #00915A;
+$green2: #00AA6D;
+$green3: #8ECF34;
+$gray: #707070;
+$gray2: #BBBBBB;
+$gray3: #F2F2F2;
+$white: #ffffff;
+
+$theme-colors: (
+    'green': $green,
+    'green2': $green2,
+    'green3': $green3,
+    'gray': $gray,
+    'gray2': $gray2,
+    'gray3': $gray3,
+    'white': $white,
+);
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1600px
+);
+
+$container-max-widths: (
+    sm: 544px,
+    md: 736px,
+    lg: 920px,
+    xl: 1140px,
+    xxl: 1540px
+);
+
+@import 'node_modules/slick-carousel/slick/slick.scss';
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+@font-face {
+    font-family: 'BNPPSans';
+    src: url('../fonts/BNPPSans-Light.woff2') format('woff2'),
+        url('../fonts/BNPPSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BNPPSans';
+    src: url('../fonts/BNPPSans.woff2') format('woff2'),
+        url('../fonts/BNPPSans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BNPPSans';
+    src: url('../fonts/BNPPSans-Bold.woff2') format('woff2'),
+        url('../fonts/BNPPSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+// editar-fonte
+$sizes: 12, 14, 15, 20, 22, 25, 30, 39, 40, 45, 50, 55;
+@each $size in $sizes {
+    .font-#{$size} {
+        font-size: $size + px;
+    }
+}
+
+@each $size in $sizes {
+    @include media-breakpoint-up(sm) {
+        .font-sm-#{$size} {
+            font-size: $size + px;
+        }
+    }
+}
+
+@each $size in $sizes {
+    @include media-breakpoint-up(md) {
+        .font-md-#{$size} {
+            font-size: $size + px;
+        }
+    }
+}
+
+@each $size in $sizes {
+    @include media-breakpoint-up(lg) {
+        .font-lg-#{$size} {
+            font-size: $size + px;
+        }
+    }
+}
+
+@each $size in $sizes {
+    @include media-breakpoint-up(xl) {
+        .font-xl-#{$size} {
+            font-size: $size + px;
+        }
+    }
+}
+
+@each $size in $sizes {
+    @include media-breakpoint-up(xxl) {
+        .font-xxl-#{$size} {
+            font-size: $size + px;
+        }
+    }
+}
+
+$weights: 300, 400, 700;
+@each $weight in $weights {
+    .font-w#{$weight} {
+        font-weight: $weight;
+    }
+}
+
+b {
+    font-weight: 700;
+}
+
+* {
+    a:hover {
+        text-decoration: none;
+    }
+    &:focus {
+        outline: 0 !important;
+    }
+
+    font-family: 'BNPPSans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    color: $gray;
+    font-family: 'BNPPSans', sans-serif;
+    font-size: 15px;
+
+    @include media-breakpoint-up(md) {
+        font-size: 30px;
+    }
+}
+
+main {
+    overflow-x: hidden;
+}
+
+a > img {
+    pointer-events: none;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.underline {
+    text-decoration: underline!important;
+}
+
+.d-contents {
+    display: contents;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.anchor-link {
+    width: 100%;
+    height: 0px;
+    position: absolute;
+    top: -70px;
+
+    @include media-breakpoint-up(lg) {
+        top: -90px;
+    }
+}
+
+
+// ---------------------------------------------------------------------
+
+
+.navbar {
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 30px 15px;
+    z-index: 10!important;
+
+    @include media-breakpoint-up(xxl) {
+        padding: 30px 80px;
+    }
+    
+    .navbar-brand {
+        display: flex;
+    }
+}
+
+.inscricao {
+    .btn-inscricao {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        line-height: 1;
+        height: 38px;
+        margin: 0;
+        text-align: center;
+        transition: all .3s ease-out;
+    
+        &.estagio {
+            background: $gray3;
+        }
+    
+        &.trainee {
+            background: $green;
+        }
+    }
+}
+
+.sobre-empresa {
+    padding: 100px 0 116px;
+    margin-top: -1px;
+
+    p {
+        &:first-child{
+            margin-bottom: 70px;
+        }
+    }
+
+    img {
+        position: relative;
+        z-index: 3;
+    }
+}
+
+.sobre-empresa2 {
+
+    padding-bottom: 80px;
+
+    .texto-left {
+        padding: 0 30px 60px;
+        position: relative;
+        z-index: 2;
+
+        &::before {
+            content: "";
+            background-color: $green3;
+            position: absolute;
+            top: -250px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+
+            @include media-breakpoint-up(md) {
+                top: -400px;
+            }
+        }
+    }
+
+    .texto-right {
+        margin-top: 78px;
+    }
+
+    .texto-middle {
+        margin-top: 100px;
+        margin-bottom: 70px;
+    }
+
+    .texto-bottom {
+        line-height: 1.2;
+    }
+}
+
+.faixa-verde {
+    padding: 117px 0;
+
+    .left {
+        border-right: 10px solid transparent;
+        box-sizing: border-box;
+    }
+
+    .right {
+        border-left: 10px solid transparent;
+        box-sizing: border-box;
+    }
+
+    .borda {
+        border-right: 3px solid $green3;
+
+    }
+}
+
+.visite {
+    padding: 120px 0;
+
+    .botao {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+}
+
+.sobre-programa {
+    .sobre-trainee, .sobre-estagio{
+       padding: 150px 0; 
+    }
+}
+
+.requisitos-programa {
+    .requisitos-trainee, .requisitos-estagio {
+        padding: 120px 0 100px;
+    }
+
+    p {
+        line-height: 1.1;
+    }
+}
+
+.beneficios {
+    padding-bottom: 190px;
+
+    .banner-beneficios {
+        margin-bottom: 170px;
+    }
+
+    .card {
+        min-height: 400px;
+        box-shadow: 0px 3px 10px #00000029;
+
+        .container-img {
+            height: 400px;
+            width: fit-content;
+        }
+    }
+
+    .text-beneficios {
+        width: 669px;
+        padding: 0 30px;
+        line-height: 1.2;
+    }
+}
+
+.etapas {
+    .banner-etapas {
+        margin-bottom: 90px;
+    } 
+
+    .card {
+        height: 232px;
+        border-radius: 100%;
+        box-shadow: 0px 8px 15px #00000029;
+        padding: 20px;
+        line-height: 1;
+    }
+
+    .arrow {
+        position: relative;
+        left: 95%;
+        top: -50%;
+        z-index: 2;
+    }
+}
