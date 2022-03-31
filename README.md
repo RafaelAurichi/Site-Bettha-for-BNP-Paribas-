@@ -1,6 +1,8 @@
 # Site-Bettha-for-BNP-Paribas-
 A website about internship and trainee commissioned by Bettha
 
+URL: http://bnp-paribas-bettha-com-br.apache4.cloudsector.net/
+
 For this project I used Sass to style. It means that you´ll need install the NPM (Node Package Manager) through NodeJS and GULP through NodeJS too.
 
 Steps for help you:
